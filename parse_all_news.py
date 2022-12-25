@@ -2,6 +2,10 @@ import re
 import csv
 import requests
 from bs4 import BeautifulSoup
+import time
+
+a = time.time()
+
 
 domain = 'https://pythondigest.ru'
 url = f'{domain}/feed/'
@@ -33,7 +37,7 @@ with open('parse_all.csv', mode='w', encoding='utf-8') as w_file:
         # Находим место с новостями
         div = soup.find_all('div', class_='item-container')
         # Проходим по всем новостям на данной странице
-        for news in div[:2]:
+        for news in div:
             # Находим место где стоит дата
             date = news.find('small').text
             # print(re.search('\d\d.\d\d.\d{4}', date)[0])
@@ -61,3 +65,7 @@ with open('parse_all.csv', mode='w', encoding='utf-8') as w_file:
             # print('*****************************')
             # Записываем в csv строку с датой, заголовком и описанием
             file_writer.writerow([date, title, des, link])
+
+b = time.time()
+print(b - a)
+print((b - a) / 60)
