@@ -65,7 +65,3 @@ with open('parse_all.csv', mode='w', encoding='utf-8') as w_file:
             # print('*****************************')
             # Записываем в csv строку с датой, заголовком и описанием
             file_writer.writerow([date, title, des, link])
-
-b = time.time()
-print(b - a)
-print((b - a) / 60)
