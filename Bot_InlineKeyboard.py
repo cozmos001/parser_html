@@ -4,7 +4,7 @@ from parse_whith_search import parser
 import glob
 import os
 
-TOKEN = '5657912444:AAF777CZANjDhv0789WDPD0KCuvDAwHPRew'
+TOKEN = 'token'
 bot = telebot.TeleBot(TOKEN, parse_mode=None)
 
 
